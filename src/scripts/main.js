@@ -39,18 +39,42 @@ let stimuliGroups = [
         "experimentStories": [
             {
                 "experiment": 1,
-                "short": 1,
-                "long": 1,
+                "story":
+                {
+                    "type":"short",
+                    "storyId":1
+                },
+                "story":
+                {
+                    "type":"long",
+                    "storyId":1
+                }
             },
             {
                 "experiment": 2,
-                "fast": 1,
-                "slow": 1
+                "story":
+                {
+                    "type":"fast",
+                    "storyId":1
+                },
+                "story":
+                {
+                    "type":"slow",
+                    "storyId":1
+                }
             },
             {
                 "experiment": 3,
-                "easy": 1,
-                "hard": 1,
+                "story":
+                {
+                    "type":"easy",
+                    "storyId":1
+                },
+                "story":
+                {
+                    "type":"hard",
+                    "storyId":1
+                }
             }
         ]
     },
@@ -59,18 +83,42 @@ let stimuliGroups = [
         "experimentStories": [
             {
                 "experiment": 1,
-                "short": 2,
-                "long": 2,
+                "story":
+                {
+                    "type":"short",
+                    "storyId":2
+                },
+                "story":
+                {
+                    "type":"long",
+                    "storyId":2
+                }
             },
             {
                 "experiment": 2,
-                "fast": 2,
-                "slow": 2
+                "story":
+                {
+                    "type":"fast",
+                    "storyId":2
+                },
+                "story":
+                {
+                    "type":"slow",
+                    "storyId":2
+                }
             },
             {
                 "experiment": 3,
-                "easy": 2,
-                "hard": 2,
+                "story":
+                {
+                    "type":"easy",
+                    "storyId":2
+                },
+                "story":
+                {
+                    "type":"hard",
+                    "storyId":2
+                }
             }
         ]
     },
@@ -79,18 +127,42 @@ let stimuliGroups = [
         "experimentStories": [
             {
                 "experiment": 1,
-                "short": 1,
-                "long": 2,
+                "story":
+                {
+                    "type":"short",
+                    "storyId":1
+                },
+                "story":
+                {
+                    "type":"long",
+                    "storyId":2
+                }
             },
             {
                 "experiment": 2,
-                "fast": 2,
-                "slow": 1
+                "story":
+                {
+                    "type":"fast",
+                    "storyId":2
+                },
+                "story":
+                {
+                    "type":"slow",
+                    "storyId":1
+                }
             },
             {
                 "experiment": 3,
-                "easy": 1,
-                "hard": 2
+                "story":
+                {
+                    "type":"easy",
+                    "storyId":1
+                },
+                "story":
+                {
+                    "type":"hard",
+                    "storyId":2
+                }
             }
         ]
     },
@@ -98,18 +170,42 @@ let stimuliGroups = [
         "id": "4",
         "experimentStories": {
             "experiment": 1,
-            "short": 2,
-            "long": 1
+            "story":
+                {
+                    "type":"short",
+                    "storyId":2
+                },
+                "story":
+                {
+                    "type":"long",
+                    "storyId":1
+                }
         },
         "experimentStories": {
             "experiment": 2,
-            "fast": 1,
-            "slow": 2,
+            "story":
+                {
+                    "type":"fast",
+                    "storyId":1
+                },
+                "story":
+                {
+                    "type":"slow",
+                    "storyId":2
+                }
         },
         "experimentStories": {
             "experiment": 3,
-            "easy": 2,
-            "hard": 1,
+            "story":
+                {
+                    "type":"easy",
+                    "storyId":2
+                },
+                "story":
+                {
+                    "type":"hard",
+                    "storyId":1
+                }
         }
     }
 ]
