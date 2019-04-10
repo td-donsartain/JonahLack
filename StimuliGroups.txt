@@ -1,0 +1,19 @@
+Group 1 order: 
+E1: Short 1, Filler, Long 1
+E2: Fast 1, Filler, Slow 1
+E3: Easy 1, Filler, Difficult 1
+
+Group 2 Order:
+E1: Short 2, Filler, Long 2
+E2: Fast 2, Filler, Slow 2
+E3: Easy 2, Filler, Difficult 2
+
+Control Group 1:
+E1: Short 1, Long 2
+E2: Fast 2, Long 1
+E3: Easy 1, Hard 2
+
+Control Group 2:
+E1: Short 2, Long 1
+E2: Fast 1, Long 2
+E3: Easy 2, Hard 1
