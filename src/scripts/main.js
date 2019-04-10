@@ -41,39 +41,39 @@ let stimuliGroups = [
                 "experiment": 1,
                 "story":
                 {
-                    "type":"short",
-                    "storyId":1
+                    "type": "short",
+                    "storyId": 1
                 },
                 "story":
                 {
-                    "type":"long",
-                    "storyId":1
+                    "type": "long",
+                    "storyId": 1
                 }
             },
             {
                 "experiment": 2,
                 "story":
                 {
-                    "type":"fast",
-                    "storyId":1
+                    "type": "fast",
+                    "storyId": 1
                 },
                 "story":
                 {
-                    "type":"slow",
-                    "storyId":1
+                    "type": "slow",
+                    "storyId": 1
                 }
             },
             {
                 "experiment": 3,
                 "story":
                 {
-                    "type":"easy",
-                    "storyId":1
+                    "type": "easy",
+                    "storyId": 1
                 },
                 "story":
                 {
-                    "type":"hard",
-                    "storyId":1
+                    "type": "hard",
+                    "storyId": 1
                 }
             }
         ]
@@ -85,39 +85,39 @@ let stimuliGroups = [
                 "experiment": 1,
                 "story":
                 {
-                    "type":"short",
-                    "storyId":2
+                    "type": "short",
+                    "storyId": 2
                 },
                 "story":
                 {
-                    "type":"long",
-                    "storyId":2
+                    "type": "long",
+                    "storyId": 2
                 }
             },
             {
                 "experiment": 2,
                 "story":
                 {
-                    "type":"fast",
-                    "storyId":2
+                    "type": "fast",
+                    "storyId": 2
                 },
                 "story":
                 {
-                    "type":"slow",
-                    "storyId":2
+                    "type": "slow",
+                    "storyId": 2
                 }
             },
             {
                 "experiment": 3,
                 "story":
                 {
-                    "type":"easy",
-                    "storyId":2
+                    "type": "easy",
+                    "storyId": 2
                 },
                 "story":
                 {
-                    "type":"hard",
-                    "storyId":2
+                    "type": "hard",
+                    "storyId": 2
                 }
             }
         ]
@@ -129,39 +129,39 @@ let stimuliGroups = [
                 "experiment": 1,
                 "story":
                 {
-                    "type":"short",
-                    "storyId":1
+                    "type": "short",
+                    "storyId": 1
                 },
                 "story":
                 {
-                    "type":"long",
-                    "storyId":2
+                    "type": "long",
+                    "storyId": 2
                 }
             },
             {
                 "experiment": 2,
                 "story":
                 {
-                    "type":"fast",
-                    "storyId":2
+                    "type": "fast",
+                    "storyId": 2
                 },
                 "story":
                 {
-                    "type":"slow",
-                    "storyId":1
+                    "type": "slow",
+                    "storyId": 1
                 }
             },
             {
                 "experiment": 3,
                 "story":
                 {
-                    "type":"easy",
-                    "storyId":1
+                    "type": "easy",
+                    "storyId": 1
                 },
                 "story":
                 {
-                    "type":"hard",
-                    "storyId":2
+                    "type": "hard",
+                    "storyId": 2
                 }
             }
         ]
@@ -171,46 +171,54 @@ let stimuliGroups = [
         "experimentStories": {
             "experiment": 1,
             "story":
-                {
-                    "type":"short",
-                    "storyId":2
-                },
-                "story":
-                {
-                    "type":"long",
-                    "storyId":1
-                }
+            {
+                "type": "short",
+                "storyId": 2
+            },
+            "story":
+            {
+                "type": "long",
+                "storyId": 1
+            }
         },
         "experimentStories": {
             "experiment": 2,
             "story":
-                {
-                    "type":"fast",
-                    "storyId":1
-                },
-                "story":
-                {
-                    "type":"slow",
-                    "storyId":2
-                }
+            {
+                "type": "fast",
+                "storyId": 1
+            },
+            "story":
+            {
+                "type": "slow",
+                "storyId": 2
+            }
         },
         "experimentStories": {
             "experiment": 3,
             "story":
-                {
-                    "type":"easy",
-                    "storyId":2
-                },
-                "story":
-                {
-                    "type":"hard",
-                    "storyId":1
-                }
+            {
+                "type": "easy",
+                "storyId": 2
+            },
+            "story":
+            {
+                "type": "hard",
+                "storyId": 1
+            }
         }
     }
 ]
 
 function loadGroup(group) {
+
+    var testGroup = stimuliGroups.find(function (element) {
+        return element.id == group;
+    })
+
+    console.log(testGroup);
+
+
     let groupId = group - 1;
 
     let stimuliGroup = stimuliGroups[groupId];
@@ -225,6 +233,6 @@ function loadGroup(group) {
 
 function loadStory(group, experiment, storyId) {
     //console.log(stimuli[group]);
-    console.log(stimuli[group].experiments[experiment]);
-    console.log(stimuli[group].experiments[experiment].experimentStories[0].id);
+    // console.log(stimuli[group].experiments[experiment]);
+    // console.log(stimuli[group].experiments[experiment].experimentStories[0].id);
 }
