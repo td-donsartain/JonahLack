@@ -7,55 +7,26 @@
     <title>Jonah Lack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="content/main.css">
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
 
 </head>
 
 <body>
+    <container>
 
-    <input id="groupAssignment" size="10" />
+        <input id="groupAssignment" size="10" />
 
-    <div id="story1">
-        <!--INJECT STORY 1-->
-    </div>
-    <div id="filler1">
-        <!--INJECT TEST SENTENCE 1-->
-    </div>
-    <div id="story2">
-        <!--INJECT STORY 2-->
-    </div>
-    <div id="test2">
-        <!--INJECT TEST SENTENCE 2-->
-    </div>
-    <div id="story3">
-        <!--INJECT STORY 3-->
-    </div>
-    <div id="test3">
-        <!--INJECT TEST SENTENCE 3-->
-    </div>
-    <div id="story4">
-        <!--INJECT STORY 4-->
-    </div>
-    <div id="test4">
-        <!--INJECT TEST SENTENCE 4-->
-    </div>
-    <div id="story5">
-        <!--INJECT STORY 5-->
-    </div>
-    <div id="test5">
-        <!--INJECT TEST SENTENCE 5-->
-    </div>
-    <div id="story6">
-        <!--INJECT STORY 6-->
-    </div>
-    <div id="test6">
-        <!--INJECT TEST SENTENCE 6-->
-    </div>
+        <div id="stories">
+
+        </div>
+    </container>
 </body>
 
 </html>
@@ -65,27 +36,26 @@
     $(document).ready(function () {
         $("#groupAssignment").keypress(function (event) {
             var group = 0;
-            switch(event.key)
-            {
-             case "1":
-                group = event.key;
-                loadGroup(group);
-                break;
-            case "2": 
-                group = event.key;
-                loadGroup(group);
-                break;
-            case "3": 
-                group = event.key;
-                loadGroup(group);
-                break;
-            case "4": 
-                group = event.key;
-                loadGroup(group);
-                break;
-            default:
-                break;                
-            }            
+            switch (event.key) {
+                case "1":
+                    group = event.key;
+                    loadGroup(group);
+                    break;
+                case "2":
+                    group = event.key;
+                    loadGroup(group);
+                    break;
+                case "3":
+                    group = event.key;
+                    loadGroup(group);
+                    break;
+                case "4":
+                    group = event.key;
+                    loadGroup(group);
+                    break;
+                default:
+                    break;
+            }
         });
     });
 </script>

@@ -328,14 +328,31 @@ let stimuliGroups = [
 
 function loadGroup(groupId) {
     var stimuliGroup = findGroup(groupId);
-    //console.log(stimuliGroup);
+    let isControlGroup = false;
 
-    let storyType = "filler";
-    let storyId = 0;
+    if (groupId === "3" || groupId === "4") {
+        isControlGroup = true;
+
+    }
+
+    let experimentStoriesLength = stimuliGroup.experimentStories.length;
 
     $.each(stimuliGroup.experimentStories, function (id, experimentStory) {
-        $.each(experimentStory.stories, function (id, story) {
-            findStimuliStory(experimentStory.experimentId, story.type, story.storyId)
+        $.each(experimentStory.stories, function (id, stimuliExperimentStory) {
+            storyCount = experimentStory.stories
+            let story = findStimuliStory(experimentStory.experimentId, stimuliExperimentStory.type, stimuliExperimentStory.storyId)
+            let storyHTML =
+                `<div class="row">
+                    <div class="col-sm-5"></div>
+                    <div class="col-6" hidden id="story${story.type}${story.storyId}">
+                    ${story.storyVerbiage}
+                    </div>
+                        <div class="col-5" hidden id="reaction${story.type}${story.storyId}">
+                    ${isControlGroup ? story.controlSentence : story.reactionSentence}
+                    </div>                
+            </div>`;
+
+            $("#stories").append(storyHTML);
         })
     });
 }
@@ -356,7 +373,7 @@ function findStimuliStory(experimentId, type, storyId) {
         return element.type == type && element.storyId == storyId;
     })
 
-    console.log(story);
+    return story;
 }
 
 function findStimuliExperiment(experimentId) {
