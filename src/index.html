@@ -14,17 +14,42 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    
+
 
 </head>
 
 <body>
     <container>
+        <div class="row testInfo">
+            <div class="col-5"></div>
+            <div class="col-4">
+                <label class="col-form-label">
+                    Please enter your first and last name
+                </label>
+                <input id="testerName" class="form-control" />
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row testInfo">
+            <div class="col-5"></div>
+            <div class="col-4">
+                <label class="col-form-label">
+                    Please enter the Group number for this trial
+                </label>
+                <input id="groupAssignment" class="form-control" />
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row" id="stories">
+            <div class="col-sm-5"></div>
 
-        <input id="groupAssignment" size="10" />
-
-        <div id="stories">
-
+        </div>
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-1">
+                <button class="btn btn-success" id="btnBegin">Begin</button>
+                <button class="btn btn-success" style="display:none" id="btnNext">Next</button>
+            </div>
         </div>
     </container>
 </body>
@@ -32,30 +57,3 @@
 </html>
 
 <script src="scripts/main.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#groupAssignment").keypress(function (event) {
-            var group = 0;
-            switch (event.key) {
-                case "1":
-                    group = event.key;
-                    loadGroup(group);
-                    break;
-                case "2":
-                    group = event.key;
-                    loadGroup(group);
-                    break;
-                case "3":
-                    group = event.key;
-                    loadGroup(group);
-                    break;
-                case "4":
-                    group = event.key;
-                    loadGroup(group);
-                    break;
-                default:
-                    break;
-            }
-        });
-    });
-</script>

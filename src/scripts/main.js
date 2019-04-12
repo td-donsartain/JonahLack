@@ -1,3 +1,51 @@
+$(document).ready(function () {
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    $("#btnNext").on("click", function () {
+        //$("#storyshort11").next(".reaction").show()
+    })
+
+    $("#btnBegin").on("click", function () {
+        let testerName = $("#testerName").val();
+        let groupId = $("#groupAssignment").val();
+        let testID = getRandomInt(100);
+
+        console.log(groupId);
+
+        $("#btnBegin").hide();
+        $(".testInfo").hide();
+        $("#btnNext").show();
+
+        switch (groupId) {
+            case "1":
+                loadGroup(groupId);
+                break;
+            case "2":
+                loadGroup(groupId);
+                break;
+            case "3":
+                loadGroup(groupId);
+                break;
+            case "4":
+                loadGroup(groupId);
+                break;
+            default:
+                break;
+        }
+
+        
+        $("#stories").find(".story").first().show();
+    })
+
+    // $("#groupAssignment").keypress(function (event) {
+    //     var group = 0;
+
+    // });
+});
+
 let stimuli = {
     "experiments": [
         {
@@ -342,15 +390,12 @@ function loadGroup(groupId) {
             storyCount = experimentStory.stories
             let story = findStimuliStory(experimentStory.experimentId, stimuliExperimentStory.type, stimuliExperimentStory.storyId)
             let storyHTML =
-                `<div class="row">
-                    <div class="col-sm-5"></div>
-                    <div class="col-6" hidden id="story${story.type}${story.storyId}">
+                `<div class="col-6 story" style="display:none;" id="story${story.type}${experimentStory.experimentId}${story.storyId}">
                     ${story.storyVerbiage}
                     </div>
-                        <div class="col-5" hidden id="reaction${story.type}${story.storyId}">
+                        <div class="col-5 reaction" style="display:none;" id="reaction${story.type}${experimentStory.experimentId}${story.storyId}">
                     ${isControlGroup ? story.controlSentence : story.reactionSentence}
-                    </div>                
-            </div>`;
+                    </div>`;
 
             $("#stories").append(storyHTML);
         })
