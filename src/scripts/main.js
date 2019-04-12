@@ -1,15 +1,20 @@
+
+// Code that loads as soon as the page is ready
 $(document).ready(function () {
 
     let currentVeribiageType = "";
     let currentVeribiageTypeId = "";
 
+    // Generate random integer (whole number)
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
+    // Next button click
     $("#btnNext").on("click", function () {
 
         if (currentVeribiageType === "story") {
+            // TODO: STOP Recording time here
             $(".story").closest("div").hide();
             $(`#${currentVeribiageTypeId}`).next("div.reaction").show();
             currentVeribiageType = "reaction";
@@ -18,12 +23,15 @@ $(document).ready(function () {
         else if (currentVeribiageType === "reaction") {
             $(".reaction").closest("div").hide();
             if ($(`#${currentVeribiageTypeId}`).next("div.story").length !== 0) {
-                $(`#${currentVeribiageTypeId}`).next("div.story").show();
+                $(`#${currentVeribiageTypeId}`).next("div.story").show();                
                 currentVeribiageType = "story";
                 currentVeribiageTypeId = $(`#${currentVeribiageTypeId}`).next("div.story").attr("id");
+
+                // TODO: START Recording time here
             }
             else{
                 // No more stories to process
+                // TODO: STOP Recording time here
             }
         }
         else {
@@ -31,6 +39,7 @@ $(document).ready(function () {
         }
     });
 
+    // Begin Button Click
     $("#btnBegin").on("click", function () {
         let testerName = $("#testerName").val();
         let groupId = $("#groupAssignment").val();
@@ -65,12 +74,14 @@ $(document).ready(function () {
         currentVeribiageType = "story";
     })
 
+    // TODO: Use this as a starting point to handle the keypress where keypress is NOT bound to a text box
     // $("#groupAssignment").keypress(function (event) {
     //     var group = 0;
 
     // });
 });
 
+// Stimuli verbiage
 let stimuli = {
     "experiments": [
         {
@@ -196,6 +207,7 @@ let stimuli = {
     ]
 };
 
+// Order in which we display the stimuli to the user
 let stimuliGroups = [
     {
         "id": "1",
@@ -399,6 +411,7 @@ let stimuliGroups = [
     }
 ]
 
+// Load a stimuliGroup by groupId
 function loadGroup(groupId) {
     var stimuliGroup = findGroup(groupId);
     let isControlGroup = false;
@@ -408,8 +421,7 @@ function loadGroup(groupId) {
 
     }
 
-    let experimentStoriesLength = stimuliGroup.experimentStories.length;
-
+    // Loops through the experiment stories in the order specified by the stimuliGroup and inserts HTML with the appropriate verbiage
     $.each(stimuliGroup.experimentStories, function (id, experimentStory) {
         $.each(experimentStory.stories, function (id, stimuliExperimentStory) {
             storyCount = experimentStory.stories
@@ -427,7 +439,7 @@ function loadGroup(groupId) {
     });
 }
 
-
+// Finds a stimuliGroup by groupId
 function findGroup(groupId) {
     var stimuliGroup = stimuliGroups.find(function (element) {
         return element.id === groupId;
@@ -436,6 +448,7 @@ function findGroup(groupId) {
     return stimuliGroup;
 }
 
+// Finds a story in the stimuli JSON Data
 function findStimuliStory(experimentId, type, storyId) {
     var experiment = findStimuliExperiment(experimentId);
 
@@ -446,6 +459,7 @@ function findStimuliStory(experimentId, type, storyId) {
     return story;
 }
 
+// Finds an experiment in the stimuli JSON Data
 function findStimuliExperiment(experimentId) {
     var experiment = stimuli.experiments.find(function (element) {
         return element.experimentId == experimentId;
