@@ -14,7 +14,6 @@ $(document).ready(function () {
     $("#btnNext").on("click", function () {
 
         if (currentVeribiageType === "story") {
-            // TODO: STOP Recording time here
             $(".story").closest("div").hide();
             $(`#${currentVeribiageTypeId}`).next("div.reaction").show();
             currentVeribiageType = "reaction";
@@ -23,15 +22,14 @@ $(document).ready(function () {
         else if (currentVeribiageType === "reaction") {
             $(".reaction").closest("div").hide();
             if ($(`#${currentVeribiageTypeId}`).next("div.story").length !== 0) {
-                $(`#${currentVeribiageTypeId}`).next("div.story").show();                
+                $(`#${currentVeribiageTypeId}`).next("div.story").show();
                 currentVeribiageType = "story";
                 currentVeribiageTypeId = $(`#${currentVeribiageTypeId}`).next("div.story").attr("id");
 
                 // TODO: START Recording time here
             }
-            else{
+            else {
                 // No more stories to process
-                // TODO: STOP Recording time here
             }
         }
         else {
@@ -75,10 +73,12 @@ $(document).ready(function () {
     })
 
     // TODO: Use this as a starting point to handle the keypress where keypress is NOT bound to a text box
-    // $("#groupAssignment").keypress(function (event) {
-    //     var group = 0;
-
-    // });
+    $(document).keypress(function (event) {
+        if (event.keyCode === 32) {
+            // TODO: STOP TIMER HERE
+            // TODO: MAKE SURE TIMER EXISTS BEFORE TRYING TO STOP
+        }
+    });
 });
 
 // Stimuli verbiage
