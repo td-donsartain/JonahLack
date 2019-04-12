@@ -1,12 +1,35 @@
 $(document).ready(function () {
 
+    let currentVeribiageType = "";
+    let currentVeribiageTypeId = "";
+
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
     $("#btnNext").on("click", function () {
-        //$("#storyshort11").next(".reaction").show()
-    })
+
+        if (currentVeribiageType === "story") {
+            $(".story").closest("div").hide();
+            $(`#${currentVeribiageTypeId}`).next("div.reaction").show();
+            currentVeribiageType = "reaction";
+            currentVeribiageTypeId = $(`#${currentVeribiageTypeId}`).next("div.reaction").attr("id");
+        }
+        else if (currentVeribiageType === "reaction") {
+            $(".reaction").closest("div").hide();
+            if ($(`#${currentVeribiageTypeId}`).next("div.story").length !== 0) {
+                $(`#${currentVeribiageTypeId}`).next("div.story").show();
+                currentVeribiageType = "story";
+                currentVeribiageTypeId = $(`#${currentVeribiageTypeId}`).next("div.story").attr("id");
+            }
+            else{
+                // No more stories to process
+            }
+        }
+        else {
+            console.error("INVALID VERBIAGE TYPE")
+        }
+    });
 
     $("#btnBegin").on("click", function () {
         let testerName = $("#testerName").val();
@@ -36,8 +59,10 @@ $(document).ready(function () {
                 break;
         }
 
-        
+
         $("#stories").find(".story").first().show();
+        currentVeribiageTypeId = $("#stories").find(".story").first().attr("id");
+        currentVeribiageType = "story";
     })
 
     // $("#groupAssignment").keypress(function (event) {
