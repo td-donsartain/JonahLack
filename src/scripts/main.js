@@ -1,11 +1,11 @@
-    let currentVeribiageType = "";
-    let currentVeribiageTypeId = "";
-    let interval = null;
-    let totalSeconds = 0;
-    let testId = 0;
+let currentVeribiageType = "";
+let currentVeribiageTypeId = "";
+let interval = null;
+let totalSeconds = 0;
+let testId = 0;
 
 // Code that loads as soon as the page is ready
-$(document).ready(function () {    
+$(document).ready(function () {
 
     // Generate random integer (whole number)
     function getRandomInt(max) {
@@ -30,7 +30,7 @@ $(document).ready(function () {
             if ($(`#${currentVeribiageTypeId}`).next("div.story").length !== 0) {
                 $(`#${currentVeribiageTypeId}`).next("div.story").show();
                 currentVeribiageType = "story";
-                currentVeribiageTypeId = $(`#${currentVeribiageTypeId}`).next("div.story").attr("id");                
+                currentVeribiageTypeId = $(`#${currentVeribiageTypeId}`).next("div.story").attr("id");
             }
             else {
                 // No more stories to process
@@ -81,7 +81,7 @@ $(document).ready(function () {
         if (event.keyCode === 32) {
             // TODO: STOP TIMER HERE
             // TODO: MAKE SURE TIMER EXISTS BEFORE TRYING TO STOP
-            if(interval){
+            if (interval) {
                 //console.log(totalSeconds);
                 clearInterval(interval);
 
@@ -103,14 +103,14 @@ $(document).ready(function () {
                     type: "POST",
                     url: "https://jonahlack.azurewebsites.net/api/HttpTrigger1?code=TfNmCSQFR0Hzxj1ETRVpFEOOIlup8hKD5fl7mUebgflZZg6cncxTEQ==",
                     data: testResult,
-                    success: function(){
+                    success: function () {
                         console.log("Success!");
                     },
-                    error:function(result){
+                    error: function (result) {
                         console.log(result);
                     },
                     dataType: "json"
-                  });
+                });
 
 
                 console.log(elemGroupId);
@@ -145,7 +145,7 @@ function loadGroup(groupId) {
                     ${story.storyVerbiage}
                     </div>
                         <div class="col-5 reaction" style="display:none;" data-experiment-id="${experimentStory.experimentId}" data-story-id="${story.storyId}" data-story-type="${story.type}" data-group-id="${groupId}" id="reaction${story.type}${experimentStory.experimentId}${story.storyId}">
-                    ${isControlGroup ? story.controlSentence : story.reactionSentence}
+                    ${isControlGroup = false ? story.reactionSentence : story.controlSentence !== "" ? story.controlSentence : story.reactionSentence}
                     </div>`;
 
             $("#stories").append(storyHTML);
