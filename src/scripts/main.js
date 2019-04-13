@@ -2,7 +2,7 @@ let currentVeribiageType = "";
 let currentVeribiageTypeId = "";
 let interval = null;
 let totalSeconds = 0;
-let testId = 0;
+let testId = "";
 
 // Code that loads as soon as the page is ready
 $(document).ready(function () {
@@ -91,7 +91,7 @@ $(document).ready(function () {
                 let elemStoryType = $(`#${currentVeribiageTypeId}`).data("storyType");
 
                 let testResult = {
-                    "testId": testId,
+                    "testId": String(testId),
                     "groupId": elemGroupId,
                     "experimentId": elemExperimentId,
                     "storyId": elemStoryId,
@@ -101,6 +101,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
+                    contentType:"application/json",
                     url: "https://jonahlack.azurewebsites.net/api/HttpTrigger1?code=TfNmCSQFR0Hzxj1ETRVpFEOOIlup8hKD5fl7mUebgflZZg6cncxTEQ==",
                     data: testResult,
                     success: function () {
