@@ -103,7 +103,7 @@ $(document).ready(function () {
                     type: "POST",
                     contentType:"application/json",
                     url: "https://jonahlack.azurewebsites.net/api/HttpTrigger1?code=TfNmCSQFR0Hzxj1ETRVpFEOOIlup8hKD5fl7mUebgflZZg6cncxTEQ==",
-                    data: testResult,
+                    data: JSON.stringify(testResult),
                     success: function () {
                         console.log("Success!");
                     },
