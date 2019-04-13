@@ -3,6 +3,7 @@ let currentVeribiageTypeId = "";
 let interval = null;
 let totalSeconds = 0;
 let testId = "";
+let testerName = "";
 
 // Code that loads as soon as the page is ready
 $(document).ready(function () {
@@ -45,7 +46,7 @@ $(document).ready(function () {
 
     // Begin Button Click
     $("#btnBegin").on("click", function () {
-        let testerName = $("#testerName").val();
+        testerName = $("#testerName").val();
         let groupId = $("#groupAssignment").val();
         testId = getRandomInt(1000);
 
@@ -96,12 +97,13 @@ $(document).ready(function () {
                     "experimentId": elemExperimentId,
                     "storyId": elemStoryId,
                     "storyType": elemStoryType,
-                    "time": totalSeconds
+                    "time": totalSeconds,
+                    "testerName": testerName
                 }
 
                 $.ajax({
                     type: "POST",
-                    contentType:"application/json",
+                    contentType: "application/json",
                     url: "https://jonahlack.azurewebsites.net/api/HttpTrigger1?code=TfNmCSQFR0Hzxj1ETRVpFEOOIlup8hKD5fl7mUebgflZZg6cncxTEQ==",
                     data: JSON.stringify(testResult),
                     success: function () {
