@@ -85,10 +85,10 @@ $(document).ready(function () {
                 //console.log(totalSeconds);
                 clearInterval(interval);
 
-                let elemGroupId = $(`#${currentVeribiageTypeId}`).data("groupid");
-                let elemExperimentId = $(`#${currentVeribiageTypeId}`).data("experimentid");
-                let elemStoryId = $(`#${currentVeribiageTypeId}`).data("storyid");
-                let elemStoryType = $(`#${currentVeribiageTypeId}`).data("storytype");
+                let elemGroupId = $(`#${currentVeribiageTypeId}`).data("groupId");
+                let elemExperimentId = $(`#${currentVeribiageTypeId}`).data("experimentId");
+                let elemStoryId = $(`#${currentVeribiageTypeId}`).data("storyId");
+                let elemStoryType = $(`#${currentVeribiageTypeId}`).data("storyType");
 
                 let testResult = {
                     "testId": testId,
