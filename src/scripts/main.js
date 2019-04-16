@@ -148,7 +148,7 @@ function loadGroup(groupId) {
                     ${story.storyVerbiage}
                     </div>
                         <div class="col-5 reaction" style="display:none;" data-experiment-id="${experimentStory.experimentId}" data-story-id="${story.storyId}" data-story-type="${story.type}" data-group-id="${groupId}" id="reaction${story.type}${experimentStory.experimentId}${story.storyId}">
-                    ${isControlGroup = false ? story.reactionSentence : story.controlSentence !== "" ? story.controlSentence : story.reactionSentence}
+                    ${isControlGroup == false ? story.reactionSentence : story.controlSentence !== "" ? story.controlSentence : story.reactionSentence}
                     </div>`;
 
             $("#stories").append(storyHTML);

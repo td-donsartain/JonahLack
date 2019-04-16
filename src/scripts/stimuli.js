@@ -87,7 +87,7 @@ let stimuli = {
                 {
                     "storyId": 0,
                     "type": "filler",
-                    "storyVerbiage": "Think of a lake<br />It measures 5 miles long and 2 miles wide<br />There’s a popular beach at the lake<br />A lot of people go swimming there<br />Phil is a truck driver<br />He’s swimming at the lake with his friends<br />The sand at the beach is very smooth<br />The road that circles the lake is very bumpy<br />It’s called “Lake Road”<br />Trucks are not allowed on Lake Road<br />It’s narrow and windy<br />Test Sentence: Phil drives his Semi-truck around the lake<br />Difficult Scenario 1<br />Think of a canyon<br />The canyon is 30 miles long and 10 miles wide<br />The canyon is very dangerous<br />There is a scenic road along the edge of the canyon<br />Ned is driving the entire length of the canyon<br />There are many hairpin turns<br />Ned drives along the edge of the canyon often without guard rails<br />",
+                    "storyVerbiage": "Think of a lake<br />It measures 5 miles long and 2 miles wide<br />There’s a popular beach at the lake<br />A lot of people go swimming there<br />Phil is a truck driver<br />He’s swimming at the lake with his friends<br />The sand at the beach is very smooth<br />The road that circles the lake is very bumpy<br />It’s called “Lake Road”<br />Trucks are not allowed on Lake Road<br />It’s narrow and windy<br />",
                     "reactionSentence": "Phil drives his Semi-truck around the lake",
                     "controlSentence": ""
                 },
