@@ -75,7 +75,7 @@ let stimuli = {
                 {
                     "storyId": 2,
                     "type": "fast",
-                    "storyVerbiage": "George is a trail runner<br />He is in great shape due to exercising every day<br />Today George is running a trail that leads up a mountain<br />He quickly runs up the trail for about 3 miles<br />Sometimes George even sprints up the mountain<br />George quickly reaches the end of the trail<br />He feels refreshed and exhilarated <br />It takes him 15 minutes to finish running the trail <br />FM Sentence: The trail soars up the mountain<br />",
+                    "storyVerbiage": "George is a trail runner<br />He is in great shape due to exercising every day<br />Today George is running a trail that leads up a mountain<br />He quickly runs up the trail for about 3 miles<br />Sometimes George even sprints up the mountain<br />George quickly reaches the end of the trail<br />He feels refreshed and exhilarated <br />It takes him 15 minutes to finish running the trail <br />",
                     "reactionSentence": "The trail soars up the mountain",
                     "controlSentence": "The trail goes up the mountain"
                 }
